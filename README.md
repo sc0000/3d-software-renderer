@@ -2,6 +2,10 @@
 
 This is a primitive, unfinished software renderer, mostly made to learn more about 3D graphics. It utilizes a little bit of [SDL](https://github.com/libsdl-org/SDL) for the window and pixel buffer, as well as png import, but is otherwise written completely from scratch. Right now, it can just display a single mesh in various ways (see controls), and allows the user to move around a bit.
 
+## Demo
+
+[Demo](https://youtu.be/3vDX2hut0-I).
+
 ## Build & Run
 
 * GCC: Run `make all` to build, `make clean` to clean up.
