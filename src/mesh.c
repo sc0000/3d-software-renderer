@@ -68,30 +68,30 @@ void mesh_parse_obj(mesh_t* mesh, const char* filepath)
 
 void mesh_free(mesh_t* mesh)
 {
-	if (!mesh) return;
+  if (!mesh) return;
 
-	darray_clear(mesh->faces);
-	darray_clear(mesh->vertices);
+  darray_clear(mesh->faces);
+  darray_clear(mesh->vertices);
 }
 
 void mesh_init_transform(mesh_t* mesh) 
 {
   mesh->scale = (vec3_t) {1.f, 1.f, 1.f};
-	mesh->rotation = (rot3_t) {0.f, 0.f, 0.f };
-	mesh->translation = (vec3_t) {0.f, 0.f, 0.f };
+  mesh->rotation = (rot3_t) {0.f, 0.f, 0.f };
+  mesh->translation = (vec3_t) {0.f, 0.f, 0.f };
 }
 
 mat4_t mesh_get_transform(const mesh_t *mesh) 
 {
-	mat4_t mat_transform = mat4_identity();
+  mat4_t mat_transform = mat4_identity();
 
-	mat4_t mat_scale = mat4_make_scale(&mesh->scale);
+  mat4_t mat_scale = mat4_make_scale(&mesh->scale);
   mat4_t rot = mat4_make_rotation(&mesh->rotation);
-	mat4_t mat_translation = mat4_make_translation(&mesh->translation);
+  mat4_t mat_translation = mat4_make_translation(&mesh->translation);
 
-	mat_transform = mat4_mul_mat4(&mat_scale, &mat_transform);
+  mat_transform = mat4_mul_mat4(&mat_scale, &mat_transform);
   mat_transform = mat4_mul_mat4(&rot, &mat_transform);
-	mat_transform = mat4_mul_mat4(&mat_translation, &mat_transform);
+  mat_transform = mat4_mul_mat4(&mat_translation, &mat_transform);
 
-	return mat_transform;
+  return mat_transform;
 }

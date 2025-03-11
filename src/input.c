@@ -10,16 +10,16 @@ static vec3_t direction = { 0.f, 0.f, 0.f };
 
 void process_input(bool* is_running)
 {
-	SDL_Event event;
+  SDL_Event event;
 
   /*
     TODO: while (SDL_PollEvent) {...}
-  
+
   */
 
-	SDL_PollEvent(&event);
+  SDL_PollEvent(&event);
 
-	switch (event.type) {
+  switch (event.type) {
     case SDL_QUIT:
       *is_running = false;
       break;
@@ -145,5 +145,5 @@ void process_input(bool* is_running)
     case SDL_MOUSEMOTION:
       rotate_camera(state_camera, &event.motion, *state_delta_time);
       break;
-	}
+  }
 }

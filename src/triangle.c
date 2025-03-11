@@ -5,13 +5,12 @@
 #include "defs.h"
 #include "triangle.h"
 
-// TODO: Move drawing functions into own files
 #include "graphics.h"
 
 void face_print(face_t* face)
 {
-	if (!face) return;
-	printf("a: %zd, b: %zd, c: %zd\n", face->a, face->b, face->c);
+  if (!face) return;
+  printf("a: %zd, b: %zd, c: %zd\n", face->a, face->b, face->c);
 }
 
 void face_fix_obj_indices(face_t* face)

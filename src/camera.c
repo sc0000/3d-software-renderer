@@ -15,10 +15,10 @@ mat4_t camera_get_transform(const camera_t* camera)
   if (!camera) return mat4_identity();
 
   mat4_t rot = mat4_make_rotation(&camera->rotation);
-	mat4_t mat_translation = mat4_make_translation(&camera->translation);
+  mat4_t mat_translation = mat4_make_translation(&camera->translation);
   mat4_t mat_transform = mat4_mul_mat4(&mat_translation, &rot);
 
-	return mat_transform;
+  return mat_transform;
 }
 
 void camera_update_dir_vectors(camera_t* camera)

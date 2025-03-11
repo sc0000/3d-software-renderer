@@ -26,71 +26,71 @@ enum directions {
 typedef uint32_t color_t;
 
 typedef struct vec2 {
-	float x;
-	float y;
+  float x;
+  float y;
 } vec2_t;
 
 typedef struct vec3 {
-	float x;
-	float y;
-	float z;
+  float x;
+  float y;
+  float z;
 } vec3_t;
 
 typedef vec3_t rot3_t;
 
 typedef struct vec4 {
-	float x;
-	float y;
-	float z;
-	float w;
+  float x;
+  float y;
+  float z;
+  float w;
 } vec4_t;
 
 typedef struct mat4 {
-	float m[4][4];
+  float m[4][4];
 } mat4_t;
 
 typedef struct uv {
-	float u;
-	float v;
+  float u;
+  float v;
 } uv_t;
 
 // vertex indices of the corresponding mesh
 typedef struct face {
-	size_t a;
-	size_t b;
-	size_t c;
-	uv_t tex_coords[3]; // [0] = tex coords of a, etc.
-	color_t color;
+  size_t a;
+  size_t b;
+  size_t c;
+  uv_t tex_coords[3]; // [0] = tex coords of a, etc.
+  color_t color;
   int clipped_plane;
 } face_t;
 
 // triangle 2d projection
 typedef struct tri2 {
-	vec2_t vertices[3];
-	uv_t tex_coords[3];
+  vec2_t vertices[3];
+  uv_t tex_coords[3];
   float inv_depth[3];
-	color_t color;
+  color_t color;
 } tri2_t;
 
 typedef struct tri4 {
   vec4_t vertices[3];
-	uv_t tex_coords[3];
-	float avg_z;
-	color_t color;
+  uv_t tex_coords[3];
+  float avg_z;
+  color_t color;
 } tri4_t;
 
 typedef struct tex2 {
-	color_t data[TEXTURE_SIZE * TEXTURE_SIZE];
-	vec2_t size;
+  color_t data[TEXTURE_SIZE * TEXTURE_SIZE];
+  vec2_t size;
 } tex2_t;
 
 typedef struct mesh {
-	vec3_t* vertices;
-	face_t* faces;
-	vec3_t scale;
-	rot3_t rotation;
-	vec3_t translation;
-	tex2_t texture;
+  vec3_t* vertices;
+  face_t* faces;
+  vec3_t scale;
+  rot3_t rotation;
+  vec3_t translation;
+  tex2_t texture;
 } mesh_t;
 
 typedef struct plane {
@@ -99,7 +99,7 @@ typedef struct plane {
 } plane_t;
 
 typedef struct light {
-	vec3_t direction;
+  vec3_t direction;
 } light_t;
 
 typedef struct camera {

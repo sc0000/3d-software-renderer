@@ -199,9 +199,9 @@ void vec3_rotate(vec3_t* v, const rot3_t* r)
 {
   if (!v) return;
 
-	vec3_rotate_x(v, r->x);
-	vec3_rotate_y(v, r->y);
-	vec3_rotate_z(v, r->z);
+  vec3_rotate_x(v, r->x);
+  vec3_rotate_y(v, r->y);
+  vec3_rotate_z(v, r->z);
 }
 
 void vec3_rotate_x(vec3_t* v, const float a)

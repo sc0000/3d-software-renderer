@@ -9,17 +9,17 @@ static bool is_running = false;
 
 int main(int argc, char* argv[])
 {
-	is_running = init_graphics();
+  is_running = init_graphics();
 
-	if (!is_running) return 0;
+  if (!is_running) return 0;
 
-	while (is_running) {
-		process_input(&is_running);
-		update();
-		render();
-	}
+  while (is_running) {
+    process_input(&is_running);
+    update();
+    render();
+  }
 
-	destroy_window();
+  destroy_window();
 
-	return 0;
+  return 0;
 }
